@@ -18,4 +18,18 @@ int main(){
 	return 0;
 }
 
-//Do not modify source code above this line
+
+void shuffle(int &a,int &b,int &c,int &d)
+{
+    int before[4] = {a,b,c,d};
+    int rand1 = rand()%4;
+    int rand2, rand3, rand4;
+    for(rand2 = rand()%4 ; rand2 == rand1 ;rand2 =rand()%4);
+    for(rand3 = rand()%4 ; rand3 == rand1 or rand3 == rand2  ;rand3 =rand()%4);
+    for(rand4 = rand()%4 ; rand4 == rand1 or rand4 == rand2 or rand4 == rand3 ; rand4 =rand()%4);
+    
+    a = before[rand1];
+    b = before[rand2];
+    c = before[rand3];
+    d = before[rand4];
+}
